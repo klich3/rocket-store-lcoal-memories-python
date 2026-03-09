@@ -45,6 +45,14 @@ memories = rs.get("memory")
 print(memories['result'])
 ```
 
+### Adding to AI Editors (Cursor, Gemini, Windsurf, Trae, etc.)
+
+**This is the primary way to use this skill.** To add it to your favorite AI assistant or editor (Cursor, Gemini, Windsurf, Trae, etc.), run the following command in your terminal:
+
+```bash
+npx skills add klich3/rocket-store-lcoal-memories-python --skill rocket-store
+```
+
 ---
 
 <a name="español"></a>
@@ -86,6 +94,14 @@ rs.post("usuarios", "u1", {"nombre": "Ana", "puntos": 100}, Rocketstore._FORMAT_
 # Recuperar con comodín
 resultado = rs.get("usuarios", "u*")
 print(resultado['result'])
+```
+
+### Añadir a Editores de IA (Cursor, Gemini, Windsurf, Trae, etc.)
+
+**Este es el uso principal de este skill.** Para añadirlo a tu asistente o editor de IA favorito (Cursor, Gemini, Windsurf, Trae, etc.), ejecuta el siguiente comando en tu terminal:
+
+```bash
+npx skills add klich3/rocket-store-lcoal-memories-python --skill rocket-store
 ```
 
 ---
