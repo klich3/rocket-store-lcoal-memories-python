@@ -1,5 +1,7 @@
 # Rocket-Store Skill for Python
 
+**Formato por defecto: Markdown** | **Default format: Markdown**
+
 [English](#english) | [Español](#español)
 
 ---
@@ -8,7 +10,7 @@
 
 ## English Description
 
-This project provides an integration of the `Rocket-Store` package as an AI **Skill**, allowing AI agents to use the filesystem as a local, persistent, and searchable database using JSON files.
+This project provides an integration of the `Rocket-Store` package as an AI **Skill**, allowing AI agents to use the filesystem as a local, persistent, and searchable database using Markdown files (by default, JSON also supported).
 
 ### What is it for?
 
@@ -19,11 +21,11 @@ It's designed for lightweight data storage where a full database server is overk
 - **High Performance**: Optimized for fast record retrieval.
 - **Low Footprint**: No external dependencies or server required—just the filesystem.
 - **Searchable**: Supports wildcard searches (`*`, `?`) in both keys and collections.
-- **Simple**: Uses standard JSON format for easy inspection and manual editing.
+- **Simple**: Uses standard Markdown format for easy inspection and manual editing (JSON also supported).
 
 ### Use Cases
 
-- **Local JSON Storage**: Store structured data locally like a mini-SQL database.
+- **Local Storage**: Store structured data locally like a mini-SQL database.
 - **Agent Memory**: Save persistent memories or context for AI agents between sessions.
 - **Listings & Catalogs**: Manage simple product catalogs, user lists, or configuration settings.
 - **Activity Logs**: Record events or logs that need to be queried later.
@@ -34,11 +36,11 @@ It's designed for lightweight data storage where a full database server is overk
 from Rocketstore import Rocketstore
 rs = Rocketstore()
 
-# Configure local storage
-rs.options(data_storage_area="./my_db", data_format=Rocketstore._FORMAT_JSON)
+# Configure local storage (Markdown by default)
+rs.options(data_storage_area="./my_db", data_format=Rocketstore._FORMAT_MARKDOWN)
 
 # Store a memory
-rs.post("memory", "last_interaction", {"action": "greet", "timestamp": "2024-03-09"}, Rocketstore._FORMAT_JSON)
+rs.post("memory", "last_interaction", {"action": "greet", "timestamp": "2024-03-09"}, Rocketstore._FORMAT_MARKDOWN)
 
 # Retrieve all memories
 memories = rs.get("memory")
@@ -59,7 +61,7 @@ npx skills add klich3/rocket-store-lcoal-memories-python --skill rocket-store
 
 ## Descripción en Español
 
-Este proyecto proporciona una integración del paquete `Rocket-Store` como un **Skill**, permitiendo a los agentes de IA utilizar el sistema de archivos como una base de datos local, persistente y buscable mediante archivos JSON.
+Este proyecto proporciona una integración del paquete `Rocket-Store` como un **Skill**, permitiendo a los agentes de IA utilizar el sistema de archivos como una base de datos local, persistente y buscable mediante archivos Markdown (por defecto, JSON también soportado).
 
 ### ¿Para qué sirve?
 
@@ -70,11 +72,11 @@ Está diseñado para el almacenamiento ligero de datos donde un servidor de base
 - **Alto Rendimiento**: Optimizado para la recuperación rápida de registros.
 - **Bajo Impacto**: Sin dependencias externas ni servidores, solo usa el sistema de archivos.
 - **Buscable**: Soporta búsquedas con comodines (`*`, `?`) tanto en claves como en colecciones.
-- **Simple**: Utiliza el formato JSON estándar para facilitar la inspección y edición manual.
+- **Simple**: Utiliza el formato Markdown estándar para facilitar la inspección y edición manual (JSON también soportado).
 
 ### Casos de Uso
 
-- **Almacenamiento Local JSON**: Guarda datos estructurados localmente tipo mini-SQL.
+- **Almacenamiento Local**: Guarda datos estructurados localmente tipo mini-SQL.
 - **Memoria de Agentes**: Guarda memorias persistentes o contexto para agentes de IA entre sesiones.
 - **Listados y Catálogos**: Gestiona catálogos de productos, listas de usuarios o configuraciones.
 - **Logs de Actividad**: Registra eventos que necesiten ser consultados posteriormente.
@@ -85,11 +87,11 @@ Está diseñado para el almacenamiento ligero de datos donde un servidor de base
 from Rocketstore import Rocketstore
 rs = Rocketstore()
 
-# Configuración de área de almacenamiento
-rs.options(data_storage_area="./mi_base_de_datos", data_format=Rocketstore._FORMAT_JSON)
+# Configuración de área de almacenamiento (Markdown por defecto)
+rs.options(data_storage_area="./mi_base_de_datos", data_format=Rocketstore._FORMAT_MARKDOWN)
 
 # Guardar un registro
-rs.post("usuarios", "u1", {"nombre": "Ana", "puntos": 100}, Rocketstore._FORMAT_JSON)
+rs.post("usuarios", "u1", {"nombre": "Ana", "puntos": 100}, Rocketstore._FORMAT_MARKDOWN)
 
 # Recuperar con comodín
 resultado = rs.get("usuarios", "u*")

@@ -1,11 +1,11 @@
 ---
 name: rocket-store
-description: "Skill to use Rocket-Store for local file-based data persistence. Use when asked to store persistent data, memories, or JSON records locally without a full database server. Perfect for agents needing a simple local storage mechanism."
+description: "Skill to use Rocket-Store for local file-based data persistence. Use when asked to store persistent data, memories, or records locally without a full database server. Perfect for agents needing a simple local storage mechanism."
 ---
 
 # Rocket-Store Skill
 
-This skill allows you to use the `Rocket-Store` package to store and retrieve data locally as JSON files. It functions as a lightweight, searchable database using the filesystem.
+This skill allows you to use the `Rocket-Store` package to store and retrieve data locally as Markdown files (by default). It functions as a lightweight, searchable database using the filesystem.
 
 ## Prerequisites
 
@@ -26,14 +26,14 @@ rs = Rocketstore()
 By default, Rocket-Store uses a temporary system directory. You can specify a custom directory:
 
 ```python
-rs.options(data_storage_area="./my_local_db", data_format=Rocketstore._FORMAT_JSON)
+rs.options(data_storage_area="./my_local_db", data_format=Rocketstore._FORMAT_MARKDOWN)
 ```
 
 ### Storing Data (Post)
 
 ```python
 # rs.post(collection, key, record, flags)
-rs.post("users", "user_1", {"name": "Alice", "age": 30}, Rocketstore._FORMAT_JSON)
+rs.post("users", "user_1", {"name": "Alice", "age": 30}, Rocketstore._FORMAT_MARKDOWN)
 ```
 
 ### Retrieving Data (Get)
@@ -68,4 +68,4 @@ rs.delete("users")
 
 ## Manual Verification
 
-Confirm that data is being saved in the directory specified in `data_storage_area`. Each collection will be a subdirectory, and each key will be a JSON file.
+Confirm that data is being saved in the directory specified in `data_storage_area`. Each collection will be a subdirectory, and each key will be a Markdown file.

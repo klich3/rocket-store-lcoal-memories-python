@@ -12,12 +12,12 @@ def main():
     
     rs = Rocketstore()
     # Optional: configure storage area
-    # rs.options(data_storage_area="./rocket_db", data_format=Rocketstore._FORMAT_JSON)
+    # rs.options(data_storage_area="./rocket_db", data_format=Rocketstore._FORMAT_MARKDOWN)
 
     if operation == "post":
         key = sys.argv[3]
         data = json.loads(sys.argv[4])
-        result = rs.post(collection, key, data, Rocketstore._FORMAT_JSON)
+        result = rs.post(collection, key, data, Rocketstore._FORMAT_MARKDOWN)
         print(json.dumps(result))
     elif operation == "get":
         key = sys.argv[3] if len(sys.argv) > 3 else "*"
